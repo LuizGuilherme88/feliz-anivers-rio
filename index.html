@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FELIZ ANIVERSÁRIO</title>
+    <link rel="icon" href="icon/bolo-de-aniversario.png" type="image/x-icon">
+
+    <style>
+        body{
+            background-image: linear-gradient(to left, pink, rgb(233, 98, 120));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+                
+        }
+        
+        #imagens{
+            text-align: center; border: 
+            2px solid white; 
+            border-radius: 15px; 
+            padding: 10px; 
+            max-width: 300px; 
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #imagens img{
+            display: none;
+            width: 100%; 
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #imagens img.ativo{
+            display: block;
+        }
+
+        #imagens p { 
+            font-size: 16px; 
+            color: white; 
+            margin-top: 8px; }
+    </style>
+</head>
+<body>
+
+    <div id="imagens" onclick="mudar()">
+      <img src="imagens/imagem01.webp" alt="img01"  class="ativo">
+      <img src="imagens/imagem02.webp" alt="img02" >
+      <img src="imagens/imagem03.webp" alt="img03">
+      <img src="imagens/imagem04.webp" alt="img04" >
+      <img src="imagens/imagem05.jpg" alt="img05" >
+      <img src="imagens/imagem06.jpg" alt="img06">
+      <img src="imagens/imagem07.jpg" alt="img07">
+      <img src="imagens/imagem08.webp" alt="img08">
+      <img src="imagens/imagem09.webp" alt="img09">
+      <img src="imagens/imagem10.webp" alt="img10">
+      <p>Feliz aniversário!</p>
+      <audio src="musicas/Billy Joel - Vienna (Official Video) - billyjoelVEVO (youtube).mp3" controls></audio>
+    </div>
+
+
+    <script>
+       function mudar(){
+        let imagens = document.querySelectorAll("#imagens img");
+        let atual = document.querySelector("#imagens img.ativo");
+
+        atual.classList.remove("ativo");
+
+        let proxima = atual.nextElementSibling;
+        if (!proxima || proxima.tagName !== "IMG") { proxima = imagens[0]; 
+
+        }
+
+        proxima.classList.add("ativo");
+       }
+    </script>
+    
+</body>
+</html>
